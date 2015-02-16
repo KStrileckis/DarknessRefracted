@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\WallSensors.cs">
+    <Files>
+      <File FileName="Assets\Standard Assets\Scripts\WallSensors.cs" Line="37" Column="4" />
+      <File FileName="D:\D Documents\Unity Projects\Zombie Conga tutorial\_Uni\Assets\Scripts\ZombieController.cs" Line="44" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
