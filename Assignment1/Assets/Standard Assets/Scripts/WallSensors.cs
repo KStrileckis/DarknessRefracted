@@ -23,7 +23,7 @@ public class WallSensors : MonoBehaviour {
 		//Check if the sensors have hit anything
 			//NOTE: For the vector additions made, normalizing is not necessary as we are only using the sums for their  directions.
 
-		if(Physics.Raycast(transform.position, Vector3(-transform.right + transform.forward), out sensors[0], senseRange) ){
+		if(Physics.Raycast(transform.position, (Vector3) (-transform.right + transform.forward), out sensors[0], senseRange) ){
 			if(sensors[0].collider.CompareTag("Wall"))
 				distanceToWall[0] = sensors[0].distance;
 		}
@@ -31,7 +31,7 @@ public class WallSensors : MonoBehaviour {
 			if(sensors[0].collider.CompareTag("Wall"))
 				distanceToWall[1] = sensors[1].distance;
 		}
-		if(Physics.Raycast(transform.position, Vector3(transform.right + transform.forward), out sensors[2], senseRange) ){
+		if(Physics.Raycast(transform.position, (Vector3)(transform.right + transform.forward), out sensors[2], senseRange) ){
 			if(sensors[0].collider.CompareTag("Wall"))
 				distanceToWall[2] = sensors[2].distance;
 		}
