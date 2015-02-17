@@ -7,10 +7,7 @@ public class SubjectController : MonoBehaviour {
 	public WallSensors wallSense;
 	
 	[SerializeField]
-	public float moveSpeed;
-	private Vector3 moveDirection;
-	public float turnSpeed;
-	
+	private Vector3 moveDirection;	
 	public float speed ;
 	public float rotationSpeed;
 	public float[] wallDistances = new float[3];
