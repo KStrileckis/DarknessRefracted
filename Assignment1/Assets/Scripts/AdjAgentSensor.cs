@@ -17,7 +17,6 @@ public class AdjAgentSensor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		//int i = 0;
 		/*foreach (bool agentPresent in inRange)
 		{
@@ -30,14 +29,10 @@ public class AdjAgentSensor : MonoBehaviour {
 			i++;
 		}*/
 		foreach (Transform agent in agentList) {
-
+			agent.GetComponent<Animator> ().SetBool ("Change", true);
 			heading = agent.position - subjectTransform.position;
-
-			//use heading and forward of the subject
-			Vector3 front = subjectTransform.right;
-			float angle = Vector3.Angle(heading, front);
-			Debug.Log ("Target name: " + agent.name  + ". Distance: " + heading.magnitude + ". Heading: " + heading + ". Angle: " + angle);
-			//Debug.Log ("Angle: " + angle);
+			Debug.Log ("Target name: " + agent.name + ". Heading: " + heading + ". Distance: " + heading.magnitude);
+		
 		}
 
 	}
@@ -69,6 +64,7 @@ public class AdjAgentSensor : MonoBehaviour {
 		//agentList.Remove (other.transform.parent.gameObject);
 			if(other.CompareTag("Agent")){
 				agentList.Remove (other.transform);
+				other.transform.GetComponent<Animator> ().SetBool ("Change", false);
 			}
 	}
 
