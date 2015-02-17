@@ -32,8 +32,12 @@ public class AdjAgentSensor : MonoBehaviour {
 		foreach (Transform agent in agentList) {
 
 			heading = agent.position - subjectTransform.position;
-			Debug.Log ("Target name: " + agent.name + ". Heading: " + heading + ". Distance: " + heading.magnitude);
-		
+
+			//use heading and forward of the subject
+			Vector3 front = subjectTransform.right;
+			float angle = Vector3.Angle(heading, front);
+			Debug.Log ("Target name: " + agent.name  + ". Distance: " + heading.magnitude + ". Heading: " + heading + ". Angle: " + angle);
+			//Debug.Log ("Angle: " + angle);
 		}
 
 	}
