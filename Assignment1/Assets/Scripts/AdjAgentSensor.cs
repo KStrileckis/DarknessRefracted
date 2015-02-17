@@ -28,12 +28,40 @@ public class AdjAgentSensor : MonoBehaviour {
 			}
 			i++;
 		}*/
+		int agentPie1 = 0;
+		int agentPie2 = 0;
+		int agentPie3 = 0;
+		int agentPie4 = 0;
 		foreach (Transform agent in agentList) {
 			agent.GetComponent<Animator> ().SetBool ("Change", true);
 			heading = agent.position - subjectTransform.position;
-			Debug.Log ("Target name: " + agent.name + ". Heading: " + heading + ". Distance: " + heading.magnitude);
+			Vector3 front = subjectTransform.right;
+			float angle = Vector3.Angle (heading, front);
+			Vector3 cross = Vector3.Cross(heading, front);
+			if (cross.z < 0) angle = -angle;
+			if(angle < 0 && angle > -90)
+			{
+				agentPie1++;
+			}
+			if(angle > 0 && angle < 90)
+			{
+				agentPie2++;
+			}
+			if(angle > 90 && angle < 180)
+			{
+				agentPie3++;
+			}
+			if(angle < -90 && angle > -180)
+			{
+				agentPie4++;
+			}
+
+			Debug.Log ("Target name: " + agent.name + ". Distance: " + heading.magnitude + ". Heading: " + heading + ". Angle: " + angle);
+			Debug.Log ("Pie Slices: " + agentPie1 + ", " + agentPie2 + ", " + agentPie3 + ", " + agentPie4 + ".");
 		
 		}
+
+
 
 	}
 
